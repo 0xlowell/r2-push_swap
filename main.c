@@ -6,7 +6,7 @@
 /*   By: lzima <marvin@42lausanne.ch>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/01 19:38:28 by lzima             #+#    #+#             */
-/*   Updated: 2022/04/02 18:25:31 by lzima            ###   ########.fr       */
+/*   Updated: 2022/04/02 21:46:33 by lzima            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,25 +22,25 @@ t_mem	*error_check(int ac, char **av, t_mem *mem)
 	return (atoi);
 }
 
-void    init_stack(t_list *stack, int ac, char **av)
+void	init_stack(t_list *stack, int ac, char **av)
 {
-    stack->a.size = 0;
-    stack->a.name = 'a';
-    stack->a.sorted = NULL;
-    indexation(error_check(ac, av, &stack->a), &stack->a);
-    is_sorted(&stack->a);
-    stack->b.sorted = malloc(stack->a.size * sizeof(int));
-    stack->b.name = 'b';
+	stack->a.size = 0;
+	stack->a.name = 'a';
+	stack->a.sorted = NULL;
+	indexation(error_check(ac, av, &stack->a), &stack->a);
+	is_sorted(&stack->a);
+	stack->b.sorted = malloc(stack->a.size * sizeof(int));
+	stack->b.name = 'b';
 }
 
-void free_stack(t_mem *atoi, t_mem *mem)
+void	free_stack(t_mem *atoi, t_mem *mem)
 {
-    free (atoi->sorted);
-    atoi->sorted = NULL;
-    free (atoi);
-    atoi = NULL;
-    free(mem->sorted);
-    mem->sorted = NULL;
+	free (atoi->sorted);
+	atoi->sorted = NULL;
+	free (atoi);
+	atoi = NULL;
+	free(mem->sorted);
+	mem->sorted = NULL;
 }
 
 int	main(int ac, char **av)
@@ -48,7 +48,7 @@ int	main(int ac, char **av)
 	t_list	stack;
 	int		i;
 
-    init_stack(&stack, ac, av);
+	init_stack(&stack, ac, av);
 	i = 0;
 	while (stack.a.size > i)
 	{
@@ -64,5 +64,5 @@ int	main(int ac, char **av)
 		algo_5(&stack.a, &stack.b);
 	if (stack.a.size >= 6)
 		algo(&stack.a, &stack.b);
-    free_stack(error_check(ac, av, &stack.a), &stack.a);
+	free_stack(error_check(ac, av, &stack.a), &stack.a);
 }
