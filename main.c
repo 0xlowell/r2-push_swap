@@ -33,6 +33,11 @@ void    init_stack(t_list *stack, int ac, char **av)
     stack->b.name = 'b';
 }
 
+void free_stack(t_mem *mem) {
+    free(mem->sorted);
+    mem->sorted = NULL;
+}
+
 int	main(int ac, char **av)
 {
 	t_list	stack;
@@ -54,6 +59,5 @@ int	main(int ac, char **av)
 		algo_5(&stack.a, &stack.b);
 	if (stack.a.size >= 6)
 		algo(&stack.a, &stack.b);
-    free(stack.a.sorted);
-    free(stack.b.sorted);
+    free_stack(&stack.a);
 }
