@@ -52,12 +52,12 @@ int	min_index(t_mem *atoi)
 	return (index_min);
 }
 
-int	*indexation(t_mem *atoi, t_mem *mem)
+int *indexation(t_mem *atoi, t_mem *mem)
 {
 	int	i;
 	int	min_to_max;
 
-	mem->sorted = malloc((mem->size) * sizeof(int));
+    mem->sorted = malloc(mem->size * sizeof(int));
 	i = -1;
 	min_to_max = 0;
 	while (++i < mem->size)
@@ -70,7 +70,7 @@ int	*indexation(t_mem *atoi, t_mem *mem)
     atoi->sorted = NULL;
 	free (atoi);
     atoi = NULL;
-	return (mem->sorted);
+    return(0);
 }
 
 int	is_sorted(t_mem *stack)

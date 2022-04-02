@@ -54,5 +54,6 @@ int	main(int ac, char **av)
 		algo_5(&stack.a, &stack.b);
 	if (stack.a.size >= 6)
 		algo(&stack.a, &stack.b);
+    free(stack.a.sorted);
     free(stack.b.sorted);
 }
