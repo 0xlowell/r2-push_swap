@@ -67,7 +67,9 @@ int	*indexation(t_mem *atoi, t_mem *mem)
 		min_to_max++;
 	}
 	free (atoi->sorted);
+    atoi->sorted = NULL;
 	free (atoi);
+    atoi = NULL;
 	return (mem->sorted);
 }
 
