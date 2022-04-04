@@ -1,7 +1,7 @@
 # push_swap_42
 push_swap : This project will make you sort data on a stack, with a limited set of instructions, using the lowest possible number of actions. To succeed you’ll have to manipulate various types of algorithms and choose the most appropriate solution (out of many) for an optimized data sorting.
 
-Algo 100% 5/5 for a 100 - 5/5 for a 500
+Algo 100% 5/5 for a 100 - 4/5 for a 500
 
 Wiki:
 For a 100, find the 20 smallest values in stack.a, and push into stack.b.
