@@ -6,7 +6,7 @@
 /*   By: lzima <marvin@42lausanne.ch>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/01 19:16:57 by lzima             #+#    #+#             */
-/*   Updated: 2022/04/02 21:44:22 by lzima            ###   ########.fr       */
+/*   Updated: 2022/04/04 11:18:11 by lzima            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ int	*indexation(t_mem *atoi, t_mem *mem)
 	int	i;
 	int	min_to_max;
 
-	mem->sorted = malloc(mem->size * sizeof(int));
+	mem->sorted = malloc(mem->size * sizeof(long));
 	i = -1;
 	min_to_max = 0;
 	while (++i < mem->size)
@@ -81,5 +81,5 @@ int	is_sorted(t_mem *stack)
 		else
 			i++;
 	}
-	exit(write(2, "Already ordered\n", 16));
+	exit(0);
 }

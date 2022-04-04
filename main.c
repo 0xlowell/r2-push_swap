@@ -6,7 +6,7 @@
 /*   By: lzima <marvin@42lausanne.ch>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/01 19:38:28 by lzima             #+#    #+#             */
-/*   Updated: 2022/04/02 21:46:33 by lzima            ###   ########.fr       */
+/*   Updated: 2022/04/04 11:20:36 by lzima            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	init_stack(t_list *stack, int ac, char **av)
 	stack->a.sorted = NULL;
 	indexation(error_check(ac, av, &stack->a), &stack->a);
 	is_sorted(&stack->a);
-	stack->b.sorted = malloc(stack->a.size * sizeof(int));
+	stack->b.sorted = malloc(stack->a.size * sizeof(long));
 	stack->b.name = 'b';
 }
 
@@ -56,6 +56,10 @@ int	main(int ac, char **av)
 		i++;
 	}
 	stack.b.size = 0;
+	if (stack.a.size == 1)
+		return (0);
+	if (stack.a.size == 2)
+		algo_2(&stack.a);
 	if (stack.a.size == 3)
 		algo_3(&stack.a);
 	if (stack.a.size == 4)

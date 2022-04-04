@@ -6,7 +6,7 @@
 /*   By: lzima <marvin@42lausanne.ch>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/01 18:59:17 by lzima             #+#    #+#             */
-/*   Updated: 2022/04/02 18:15:03 by lzima            ###   ########.fr       */
+/*   Updated: 2022/04/04 11:18:21 by lzima            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 typedef struct s_mem
 {
 	int		size;
-	int		*sorted;
+	long	*sorted;
 	char	name;
 }				t_mem;
 
@@ -41,7 +41,7 @@ void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 
 /*  @fn  libft_2  */
-int		ft_atoi(const char *str);
+long	ft_atol(const char *str);
 char	**ft_split(const char *s, char c);
 
 ////////////////////////////////////////////////////////////////////////

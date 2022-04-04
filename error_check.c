@@ -6,7 +6,7 @@
 /*   By: lzima <marvin@42lausanne.ch>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/01 19:48:29 by lzima             #+#    #+#             */
-/*   Updated: 2022/04/02 18:11:12 by lzima            ###   ########.fr       */
+/*   Updated: 2022/04/04 11:20:18 by lzima            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,11 +50,11 @@ int	sizeof_atoi(int ac, t_mem *mem)
 	return (size);
 }
 
-int	*ft_split_atoi(char **stock, t_mem *mem)
+long	*ft_split_atoi(char **stock, t_mem *mem)
 {
-	int	i;
-	int	size;
-	int	*tab;
+	int		i;
+	int		size;
+	long	*tab;
 
 	i = 0;
 	size = 0;
@@ -65,10 +65,10 @@ int	*ft_split_atoi(char **stock, t_mem *mem)
 	}
 	mem->size = size;
 	i = 0;
-	tab = malloc(size * sizeof(int));
+	tab = malloc(size * sizeof(long));
 	while (stock[i])
 	{
-		tab[i] = ft_atoi(stock[i]);
+		tab[i] = ft_atol(stock[i]);
 		i++;
 	}
 	return (tab);
@@ -91,12 +91,12 @@ t_mem	*atoi_args(int ac, char **av, t_mem *mem)
 	}
 	else
 	{
-		atoi->sorted = malloc(sizeof_atoi(ac, mem) * sizeof(int));
+		atoi->sorted = malloc(sizeof_atoi(ac, mem) * sizeof(long));
 		atoi->size = mem->size;
 		i = 0;
 		while (++i < ac)
 		{
-			atoi->sorted[y] = ft_atoi(av[i]);
+			atoi->sorted[y] = ft_atol(av[i]);
 			y++;
 		}
 	}
@@ -115,6 +115,8 @@ void	double_error(t_mem *atoi)
 		while (y < atoi->size)
 		{
 			if (atoi->sorted[i] == atoi->sorted[y] && i != y)
+				exit(write(2, "Error\n", 6));
+			if (atoi->sorted[y] > 2147483647)
 				exit(write(2, "Error\n", 6));
 			y++;
 		}
