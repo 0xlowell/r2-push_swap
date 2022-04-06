@@ -2,6 +2,7 @@
 push_swap : This project will make you sort data on a stack, with a limited set of instructions, using the lowest possible number of actions. To succeed you’ll have to manipulate various types of algorithms and choose the most appropriate solution (out of many) for an optimized data sorting.
 
 Algo 100% 5/5 for a 100 - 4/5 for a 500
+
 [![lzima's 42 push_swap Score](https://badge42.vercel.app/api/v2/cl1nk4f8f004009lb75fyii0c/project/2455829)](https://github.com/JaeSeoKim/badge42)
 
 Wiki:
